@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<!--
+Template Name: Drywest
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html lang="en">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+{% load staticfiles %} 
+<title>eATTENDANCE | ADMIN</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+    height: responsive;
+    width: 200px;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: green;
+    color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul>
+      <li><i class="fa fa-clock-o"></i> Mon. - Fri. 8am - 5pm</li>
+      <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+      <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+      <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
+      <li><a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
+      <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="../index.html">eATTENDANCE</a></h1>
+    </div>
+    <div class="fl_right"><a class="btn" href="#"></a></div>
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded" style="background-image:url('../images/demo/backgrounds/01.png');"> 
+  <!-- #############################################################LOREM IPSUM PAIN
+LOREM IPSUM PAIN
+################################### -->
+  <div class="wrapper row2">
+    <nav id="mainav" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+       <ul class="clear">
+        <li class="active"><a href="../index.html">Home</a></li>
+        <li><a class="drop" href="#">USERS</a>
+          <ul>
+            <li><a href="#">ADMIN</a></li>
+            <li><a href="faculty.html">FACULTY</a></li>
+            <li><a href="Student.html">STUDENT</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="#">COURSES</a>
+          <ul>
+            <li><a  href="Course.html">CSE</a></li>
+            <li><a  href="Course.html">ECE</a></li>
+          </ul>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contacts</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+      <!-- ################################################################################################ -->
+    </nav>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+</div>
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="sidebar one_quarter first"> 
+      <!-- ################################################################################################ -->
+      <h6>CONTENTS</h6>
+      <nav class="sdb_holder">
+        <ul>
+          <div class="sidenav">
+            <button class="dropdown-btn">ADD Details 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+              <a href="#Faculty_details">Faculty</a>
+              <a href="#Student_details">Student</a>
+            </div>
+            <button class="dropdown-btn">Modify Details 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+              <a href="#">Faculty</a>
+              <a href="#">Student</a>
+            </div>
+            <a href="#clients">Generate Time Table</a>
+            <a href="#contact">cccc</a>
+          </div>
+        </ul>
+      </nav>
+      <div class="sdb_holder">
+        <article>
+        </article>
+      </div>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="content three_quarter"> 
+      <!-- ################################################################################################ -->
+      <h1>Adminstrative Stuff for the Institute</h1>
+      <img class="imgr borderedbox inspace-5" src="../images/demo/imgr.gif" alt="">
+      <p>Edit faculty and student details and apply changes</p>
+      <p>Add faculty and student details</p>
+      <img class="imgl borderedbox inspace-5" src="../images/demo/imgl.gif" alt="">
+      <h1>TIME Table(s)</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th> 1st Year</th>
+              <th> 2nd Year</th>
+              <th> 3rd Year</th>
+              <th> 4th Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="#">CSE</a></td>
+              <td><a href="#">CSE</a></td>
+              <td><a href="#">CSE</a></td>
+              <td><a href="#">CSE</a></td>
+            </tr>
+           <tr>
+              <td><a href="#">ECE</a></td>
+              <td><a href="#">ECE</a></td>
+              <td><a href="#">ECE</a></td>
+              <td><a href="#">ECE</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="Faculty_details">
+        <h2>Add Faculty Details</h2>
+        {% if error_message %} 
+			<p><strong>{{error_message}}</strong></p>
+		{% endif %}	
+		<form action="{% url 'portal:addfaculty' %}" method="post">
+			{% csrf_token %}
+          <div class="one_third first">
+            <label for="firstname">FirstName <span>*</span></label>
+            <input type="text" name="firstname" id="FirstName" value="" size="22" required>
+          </div>
+          <div class="one_third ">
+            <label for="lastname">LastName <span>*</span></label>
+            <input type="text" name="lastname" id="LastName" value="" size="22" required>
+          </div>
+		  <div class="one_third first">
+            <label for="phonenum">PhoneNum <span>*</span></label>
+            <input type="text" name="phonenum" id="PhoneNum" value="" size="22" required>
+          </div>
+          <div class="one_third ">
+            <label for="email">Mail <span>*</span></label>
+            <input type="email" name="email" id="email" value="" size="22" required>
+          </div>
+          <div class="one_third" >
+            <label for="Department">Department<span>*</span></label>
+            <input type="text" name="department" id="Department" value="" size="22" required>
+          </div>
+          <div>
+            <input type="submit" name="submit" value="Submit">
+            &nbsp;
+            <input type="reset" name="reset" value="Reset">
+          </div>
+        </form>
+      </div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+      <div id="Student_details">
+        <h2>Add Student Details</h2>
+        {% if error_message %} 
+			<p><strong>{{error_message}}</strong></p>
+		{% endif %}	
+		<form action="{% url 'portal:addstudent' %}" method="post">
+			{% csrf_token %}
+          <div class="one_third first">
+            <label for="firstname">FirstName <span>*</span></label>
+            <input type="text" name="firstname" id="FirstName" value="" size="22" required>
+          </div>
+          <div class="one_third ">
+            <label for="lastname">LastName <span>*</span></label>
+            <input type="text" name="lastname" id="LastName" value="" size="22" required>
+          </div>
+		  <div class="one_third ">
+            <label for="rollno">RollNo <span>*</span></label>
+            <input type="text" name="rollno" id="RollNo" value="" size="22" required>
+          </div>
+		  <div class="one_third first">
+            <label for="phonenum">PhoneNum <span>*</span></label>
+            <input type="text" name="phonenum" id="PhoneNum" value="" size="22" required>
+          </div>
+          <div class="one_third ">
+            <label for="email">Mail <span>*</span></label>
+            <input type="email" name="email" id="email" value="" size="22" required>
+          </div>
+          <div class="one_third" >
+            <label for="Department">Department<span>*</span></label>
+            <input type="text" name="department" id="Department" value="" size="22" required>
+          </div>
+		  <div class="one_third first">
+            <label for="sem">Sem <span>*</span></label>
+            <input type="text" name="sem" id="Sem" value="" size="22" required>
+          </div>
+          <div>
+            <input type="submit" name="submit" value="Submit">
+            &nbsp;
+            <input type="reset" name="reset" value="Reset">
+          </div>
+        </form>
+      </div>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper bgded overlay light" style="background-image:url('../images/demo/backgrounds/05.png');">
+  <figure class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="nospace group logos">
+      <li class="one_quarter first"><a href="#"><img src="../images/demo/222x100.png" alt=""></a></li>
+      <li class="one_quarter"><a href="#"><img src="../images/demo/222x100.png" alt=""></a></li>
+      <li class="one_quarter"><a href="#"><img src="../images/demo/222x100.png" alt=""></a></li>
+      <li class="one_quarter"><a href="#"><img src="../images/demo/222x100.png" alt=""></a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </figure>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+  <footer id="footer" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_third first">
+      <h6 class="heading">Arcu accumsan id felis</h6>
+      <ul class="nospace btmspace-30 linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          Street Name &amp; Number, Town, Postcode/Zip
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+        <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+      </ul>
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
+        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+        <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="heading">Sodales facilisis nisi</h6>
+      <ul class="nospace linklist">
+        <li>
+          <article>
+            <h2 class="nospace font-x1"><a href="#">Curabitur a pharetra</a></h2>
+            <time class="font-xs block btmspace-10" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>
+            <p class="nospace">Quis quam in hendrerit elit donec hendrerit sollicitudin imperdiet curabitur [&hellip;]</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h2 class="nospace font-x1"><a href="#">Risus sit amet blandit</a></h2>
+            <time class="font-xs block btmspace-10" datetime="2045-04-05">Thursday, 5<sup>th</sup> April 2045</time>
+            <p class="nospace">Ultricies aliquam nisi vitae pulvinar donec luctus ex ex eget ornare tortor [&hellip;]</p>
+          </article>
+        </li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="heading">Justo duis vulputate</h6>
+      <p class="nospace btmspace-30">commodo non proin fermentum neque sapien phasellus molestie tincidunt.</p>
+      <form method="post" action="#">
+        <fieldset>
+          <legend>Newsletter:</legend>
+          <input class="btmspace-15" type="text" value="" placeholder="Name">
+          <input class="btmspace-15" type="text" value="" placeholder="Email">
+          <button type="submit" value="submit">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

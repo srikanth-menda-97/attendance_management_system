@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--
+Template Name: Drywest
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html lang="en">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+{% load staticfiles %}
+<title>eATTENDANCE</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href=" {% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+    height: responsive;
+    width: 200px;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 15px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: green;
+    color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    font-size:16px;
+    background-color: #262626;
+    padding-left: 6px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul>
+      <li><i class="fa fa-clock-o"></i> Mon. - Fri. 8am - 5pm</li>
+      <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+      <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+      <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
+      <li><a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
+      <li><a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="/">eATTENDANCE</a></h1>
+    </div>
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded" style="background-color:'orange';"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper row2">
+    <nav id="mainav" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <ul class="clear">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a class="drop" href="#">COURSES</a>
+          <ul>
+            <li><a href="Course.html">CSE</a></li>
+            <li><a href="Course.html">ECE</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#">Contacts</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+      <!-- ################################################################################################ -->
+    </nav>
+  </div>
+  <div class="sidebar one_quarter first"> 
+      <!-- ################################################################################################ -->
+      <h6>CONTENTS</h6>
+      <nav class="sdb_holder">
+        <ul>
+          <div class="sidenav">
+            <a href="#about">About</a>
+            <a href="#Courses">Courses</a>
+            <button class="dropdown-btn">AttendanceSheet 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+              <a herf="attendance sheet.html" id="1st sem">1st SEM</a>
+              <a herf="attendance sheet.html" id="3st sem">3st SEM</a>
+              <a herf="attendance sheet.html" id="5st sem">5st SEM</a>
+            <a href="#contact">Search</a>
+          </div>
+        </ul>
+      </nav>
+	</div>  
+<div class="content three_quarter"> 	
+	<h1>Attendance Sheet(s)</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th> RollNo</th>
+              <th> Name</th>
+              <th> date</th>
+			  <th> Absent/Present</th>
+            </tr>
+          </thead>
+{% if attendance_sheet %}
+		  <tbody>
+           {% for student in attendance_sheet %}
+            <tr>
+              <td>{{student.RollNo}}</td>
+              <td>{{student.FirstName}}</td>
+              <td>2-04-2018</td>
+              <td><a class="btn" href="{{student.id}}/">Absent</a></td>
+            </tr>
+		   {% endfor %}
+{% endif %}
+          </tbody>
+        </table>
+      </div>  
+</div>	  
+  </body>
